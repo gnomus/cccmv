@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}My amazing blog{% endblock %}
+
+{% block navbar %}
+          <li><a href="/">Dashboard</a></li>
+          <li class="active"><a href="/mv">Mitglieder</a></li>
+          <li><a href="#">About</a></li>
+{% endblock %}
+
+{% block content %}
+<h2>Mitgliederliste</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Chaosnummer</th>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>Adresse</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+{% for member in memberlist %}
+<tr>
+<td>{{member.chaosnummer}}</td>
+<td>{{member.vorname}}</td>
+<td>{{member.nachname}}</td>
+<td>{{member.anschrift}}</td>
+<td>{{member.email}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
